@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/fullwool", (req, res) => {
-  res.send("<h2>Hello FullWool</h2>");
+  res.send(["Hello FullWool"]);
 });
 
 module.exports = router;
