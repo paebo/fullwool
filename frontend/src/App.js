@@ -2,12 +2,8 @@ import "./App.css";
 import { useState, useEffect, useContext } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from "axios";
-import { ItemContext } from "./contexts/ItemContext";
-import ItemList from "./pages/ItemList";
 
 function App() {
-  //const { items, setItems } = useContext(ItemContext);
-
   const [items, setItems] = useState([]);
 
   const fetchItems = async () => {
@@ -20,18 +16,14 @@ function App() {
   useEffect(() => {
     fetchItems();
     console.log(items);
-  }, []);
+  }, [items]);
 
   return (
     <Router>
       <div className='App'>
-        <header className='App-header'></header>
-
-        <Route path='/fullwool' component={ItemList} />
-
-        <Link to='/fullwool'>
-          <button>Click me</button>
-        </Link>
+        <header className='App-header'>
+          Rólam | Galéria | Tanfolyamok | Áruház | Blog
+        </header>
       </div>
     </Router>
   );
