@@ -10,9 +10,6 @@ function App() {
     return await axios.get("http://localhost:8080/fullwool");
   };
 
-  function fetchInventoryItems() {
-    fetchItems().then((data) => setItems(data.data));
-  }
   useEffect(() => {
     fetchItems();
     console.log(items);
