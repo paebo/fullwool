@@ -1,6 +1,6 @@
--- DROP DATABASE IF EXISTS fullwool;
--- CREATE DATABASE fullwool;
-
+DROP DATABASE IF EXISTS fullwool;
+CREATE DATABASE fullwool;
+\c fullwool
 DROP TABLE IF EXISTS account;
 DROP TABLE IF EXISTS post;
 DROP TABLE IF EXISTS about;
