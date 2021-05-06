@@ -1,5 +1,6 @@
 const { response } = require("express");
 const { Pool } = require("pg");
+const format = require("pg-format");
 require("dotenv").config();
 
 const pool = new Pool({
@@ -10,12 +11,15 @@ const pool = new Pool({
     port: process.env.PGPORT,
 });
 
-const saveAbout = (req, response) => {
-    const bio = 'Hi my name is John'
-    const image = 'https://p1.akcdn.net/full/657564003.kreativ-kreativ-pamut-polofonal-nagy-gombolyag-szurke-kreativ-441.jpg'
-    pool.query(`
-        INSERT INTO about (bio, img) 
-        VALUES (${bio}, ${image})`);
+const updateAbout = (req, resp) => {
+    const {bio, image} = {bio: "Another ANOTHER bio", image: "file.jpg"}
+    try {
+        pool.query(
+            format('UPDATE about SET bio = \'%s\', img = \'%s\' WHERE id = 1', bio, image));
+        return {success: true}
+    } catch (error){
+        return {error};
+    }
 };
 
 const getAbout = (req, response) => {
@@ -27,4 +31,4 @@ const getAbout = (req, response) => {
     });
 }
 
-module.exports = {saveAbout, getAbout};
+module.exports = {updateAbout, getAbout};
