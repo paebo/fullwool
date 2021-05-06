@@ -28,7 +28,7 @@ CREATE TABLE about
 (
     id SERIAL PRIMARY KEY,
     bio TEXT,
-    img VARCHAR
+    img VARCHAR(255)
 );
 
 CREATE TABLE gallery

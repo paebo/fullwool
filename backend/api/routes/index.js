@@ -1,8 +1,11 @@
 const express = require("express"); 
 const router = express.Router();
+const db = require("../../queries");
 
 router.get("/", (req, res) => {
-    res.send("UNION ALL/kiskacsa")
-})
+    
+});
+
+router.get("/about", db.getAbout);
 
 module.exports = router;
