@@ -4,31 +4,32 @@ const format = require("pg-format");
 require("dotenv").config();
 
 const pool = new Pool({
-    user: process.env.PGUSER,
-    password: process.env.PGPASSWORD,
-    host: process.env.PGHOST,
-    database: process.env.PGDATABASE,
-    port: process.env.PGPORT,
+  user: process.env.PGUSER,
+  password: process.env.PGPASSWORD,
+  host: process.env.PGHOST,
+  database: process.env.PGDATABASE,
+  port: process.env.PGPORT,
 });
 
 const updateAbout = (req, resp) => {
-    const {bio, image} = {bio: "Another ANOTHER bio", image: "file.jpg"}
-    try {
-        pool.query(
-            format('UPDATE about SET bio = \'%s\', img = \'%s\' WHERE id = 1', bio, image));
-        return {success: true}
-    } catch (error){
-        return {error};
-    }
+  const { bio, image } = { bio: "Another ANOTHER bio", image: "file.jpg" };
+  try {
+    pool.query(
+      format("UPDATE about SET bio = '%s', img = '%s' WHERE id = 1", bio, image)
+    );
+    return { success: true };
+  } catch (error) {
+    return { error };
+  }
 };
 
 const getAbout = (req, response) => {
-    results = pool.query(`SELECT * FROM about`, (error, results) => {
-        if (error) {
-            throw error;
-        }
-        response.status(200).json(results.rows);
-    });
-}
+  results = pool.query(`SELECT * FROM about`, (error, results) => {
+    if (error) {
+      throw error;
+    }
+    response.status(200).json(results.rows);
+  });
+};
 
-module.exports = {updateAbout, getAbout};
+module.exports = { updateAbout, getAbout };
