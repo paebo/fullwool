@@ -23,12 +23,12 @@ const updateAbout = (req, resp) => {
   }
 };
 
-const getAbout = (req, response) => {
+const getAbout = (req, resp) => {
   results = pool.query(`SELECT * FROM about`, (error, results) => {
     if (error) {
       throw error;
     }
-    response.status(200).json(results.rows);
+    resp.status(200).json(results.rows);
   });
 };
 
