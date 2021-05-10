@@ -7,13 +7,16 @@ function App() {
   const [items, setItems] = useState([]);
 
   const fetchItems = async () => {
-    return await axios.get("http://localhost:8080/fullwool");
+    const response = await axios.get("http://localhost:8081/about");
+    setItems(response);
   };
 
   useEffect(() => {
     fetchItems();
-    console.log(items);
-  }, [items]);
+    return () => {};
+  }, []);
+
+  console.log(items);
 
   return (
     <Router>
