@@ -44,7 +44,6 @@ const getAllGalleryItems = (req, resp) => {
 }
 
 const getContactInfo = () => {
-  try {
     try {
       // TODO: ask if a separate table is necessary for this
       contactInfo = pool.query(
@@ -53,8 +52,12 @@ const getContactInfo = () => {
       return {contactInfo};
     } catch (error) {
       return { error };
-    }
   }
 }
 
-module.exports = { updateAbout, getAbout, getAllGalleryItems, getContactInfo };
+module.exports = { 
+  updateAbout,
+  getAbout,
+  getAllGalleryItems,
+  getContactInfo
+};
