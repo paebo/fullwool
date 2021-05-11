@@ -61,7 +61,19 @@ const getBlogPosts = () => {
     blogPosts = pool.query(
       format("SELECT * FROM post ORDER BY id DESC")
     );
-    return { blogPosts }
+    return { blogPosts };
+  } catch (error) {
+    return { error };
+  }
+}
+
+const getActiveCourses = () => {
+  try {
+    // TODO create db table "courses", need to discuss specifics
+    activeCourses = pool.query(
+      format("SELECT * FROM courses WHERE is_active = TRUE LIMIT 30")
+    );
+    return { activeCourses };
   } catch (error) {
     return { error };
   }
@@ -72,5 +84,6 @@ module.exports = {
   getAbout,
   getAllGalleryItems,
   getContactInfo,
-  getBlogPosts
+  getBlogPosts,
+  getActiveCourses
 };
