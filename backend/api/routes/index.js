@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../../queries");
+const db = require("../../model/queries");
 const cors = require("cors");
 
 const corsOptions = {
