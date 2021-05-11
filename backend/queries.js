@@ -33,11 +33,12 @@ const getAbout = (req, resp) => {
 };
 
 const getAllGalleryItems = (req, resp) => {
+  // TODO: decide if we should use format method for SELECT statements 
   try {
     galleryItems = pool.query(
       format("SELECT * FROM gallery ORDER BY id DESC")
     );
-    return {galleryItems};
+    return { galleryItems };
   } catch (error) {
     return { error };
   }
@@ -49,9 +50,20 @@ const getContactInfo = () => {
       contactInfo = pool.query(
         format("SELECT * FROM contact")
       );
-      return {contactInfo};
+      return { contactInfo };
     } catch (error) {
       return { error };
+  }
+}
+
+const getBlogPosts = () => {
+  try {
+    blogPosts = pool.query(
+      format("SELECT * FROM post ORDER BY id DESC")
+    );
+    return { blogPosts }
+  } catch (error) {
+    return { error };
   }
 }
 
@@ -59,5 +71,6 @@ module.exports = {
   updateAbout,
   getAbout,
   getAllGalleryItems,
-  getContactInfo
+  getContactInfo,
+  getBlogPosts
 };
