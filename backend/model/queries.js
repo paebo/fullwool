@@ -15,7 +15,7 @@ const updateAbout = (req, resp) => {
   const { bio, image } = { bio: "Another ANOTHER bio", image: "file.jpg" };
   try {
     pool.query(
-      format("UPDATE about SET bio = '%s', img = '%s' WHERE id = 1", bio, image)
+      format("UPDATE about SET bio = \'%s\', img = \'%s\' WHERE id = 1", bio, image)
     );
     return { success: true };
   } catch (error) {
@@ -23,13 +23,13 @@ const updateAbout = (req, resp) => {
   }
 };
 
-const getAbout = (req, resp) => {
-  results = pool.query("SELECT * FROM about", (error, results) => {
-    if (error) {
-      throw error;
-    }
-    resp.status(200).json(results.rows);
-  });
+const getAbout = () => {
+  try {
+    results = pool.query("SELECT * FROM about")
+    return { results }
+  } catch (error) {
+    return { error };
+  }
 };
 
 const getAllGalleryItems = (req, resp) => {
@@ -67,7 +67,6 @@ const getBlogPosts = () => {
 
 const getActiveCourses = () => {
   try {
-    // TODO: create db table "courses", need to discuss specifics
     activeCourses = pool.query(
       format("SELECT * FROM courses WHERE is_active = TRUE LIMIT 30")
     );
@@ -79,7 +78,7 @@ const getActiveCourses = () => {
 
 const getShopItems = () => {
   try {
-    // TODO: discuss if quantity column should be necessary for the shop table
+    // TODO: discuss if quantity column should be necessary for the shop table(still up to debate)
     shopItems = pool.query(
       format("SELECT * FROM shop")
     );
