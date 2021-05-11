@@ -12,6 +12,7 @@ router.get("/", (req, res) => {});
 
 router.get("/about", cors(corsOptions), db.getAbout);
 
+router.get("/gallery", cors(corsOptions), db.getAllGalleryItems);
 /*router.put("/about", (req, resp) => {
   const result = db.updateAbout();
   resp.status(200).send(result);

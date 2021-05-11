@@ -24,7 +24,7 @@ const updateAbout = (req, resp) => {
 };
 
 const getAbout = (req, resp) => {
-  results = pool.query(`SELECT * FROM about`, (error, results) => {
+  results = pool.query("SELECT * FROM about", (error, results) => {
     if (error) {
       throw error;
     }
@@ -32,4 +32,15 @@ const getAbout = (req, resp) => {
   });
 };
 
-module.exports = { updateAbout, getAbout };
+const getAllGalleryItems = (req, resp) => {
+  try {
+    galleryItems = pool.query(
+      format("SELECT * FROM gallery ORDER BY id DESC")
+    );
+    return {galleryItems};
+  } catch (error) {
+    return { error };
+  }
+}
+
+module.exports = { updateAbout, getAbout, getAllGalleryItems };
