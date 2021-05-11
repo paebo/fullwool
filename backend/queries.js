@@ -43,4 +43,18 @@ const getAllGalleryItems = (req, resp) => {
   }
 }
 
-module.exports = { updateAbout, getAbout, getAllGalleryItems };
+const getContactInfo = () => {
+  try {
+    try {
+      // TODO: ask if a separate table is necessary for this
+      contactInfo = pool.query(
+        format("SELECT * FROM contact")
+      );
+      return {contactInfo};
+    } catch (error) {
+      return { error };
+    }
+  }
+}
+
+module.exports = { updateAbout, getAbout, getAllGalleryItems, getContactInfo };
