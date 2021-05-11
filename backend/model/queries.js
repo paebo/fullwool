@@ -33,7 +33,6 @@ const getAbout = (req, resp) => {
 };
 
 const getAllGalleryItems = (req, resp) => {
-  // TODO: decide if we should use format method for SELECT statements 
   try {
     galleryItems = pool.query(
       format("SELECT * FROM gallery ORDER BY id DESC")
@@ -46,7 +45,6 @@ const getAllGalleryItems = (req, resp) => {
 
 const getContactInfo = () => {
     try {
-      // TODO: ask if a separate table is necessary for this
       contactInfo = pool.query(
         format("SELECT * FROM contact")
       );
