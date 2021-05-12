@@ -20,7 +20,17 @@ const getGalleryData = async (req, resp) => {
     }
 }
 
+const getContactData = async (req, resp) => {
+    try {
+        contactInformation = await db.getContactInfo();
+        resp.send({ contactInformation });
+    } catch (error) {
+        return { error };
+    }
+}
+
 module.exports = {
     getAboutPageData,
     getGalleryData,
+    getContactData,
 }

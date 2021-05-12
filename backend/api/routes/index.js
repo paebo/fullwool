@@ -15,7 +15,7 @@ router.get("/about", cors(corsOptions), service.getAboutPageData);
 
 router.get("/gallery", cors(corsOptions), service.getGalleryData);
 
-router.get("/contact", cors(corsOptions), db.getContactInfo);
+router.get("/contact", cors(corsOptions), service.getContactData);
 
 router.get("/blog", cors(corsOptions), db.getBlogPosts);
 

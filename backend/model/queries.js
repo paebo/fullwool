@@ -32,7 +32,7 @@ const getAbout = async () => {
   }
 };
 
-const getAllGalleryItems = async (req, resp) => {
+const getAllGalleryItems = async () => {
   try {
     galleryItems = await pool.query(
       format("SELECT * FROM gallery ORDER BY id DESC")
@@ -43,9 +43,9 @@ const getAllGalleryItems = async (req, resp) => {
   }
 }
 
-const getContactInfo = () => {
+const getContactInfo = async () => {
     try {
-      contactInfo = pool.query(
+      contactInfo = await pool.query(
         format("SELECT * FROM contact")
       );
       return { contactInfo };
