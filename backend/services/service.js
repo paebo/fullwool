@@ -29,8 +29,18 @@ const getContactData = async (req, resp) => {
     }
 }
 
+const getBlogPosts = async (req, resp) => {
+    try {
+        posts = await db.getBlogPosts();
+        resp.send({ posts })
+    } catch (error) {
+        return { error };
+    }
+}
+
 module.exports = {
     getAboutPageData,
     getGalleryData,
     getContactData,
+    getBlogPosts,
 }

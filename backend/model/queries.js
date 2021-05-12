@@ -54,9 +54,9 @@ const getContactInfo = async () => {
   }
 }
 
-const getBlogPosts = () => {
+const getBlogPosts = async () => {
   try {
-    blogPosts = pool.query(
+    blogPosts = await pool.query(
       format("SELECT * FROM post ORDER BY id DESC")
     );
     return { blogPosts };
