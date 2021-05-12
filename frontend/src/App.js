@@ -1,6 +1,6 @@
 import "./App.css";
-import { useState, useEffect, useContext } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import axios from "axios";
 import About from "./pages/About";
 import Gallery from "./pages/Gallery";
@@ -8,6 +8,7 @@ import CourseList from "./pages/CourseList";
 import Shop from "./pages/Shop";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
+import Header from "./components/Header";
 
 function App() {
     const [items, setItems] = useState([]);
@@ -27,14 +28,7 @@ function App() {
     return (
         <Router>
             <div className='App'>
-                <header className='App-header'>
-                    <Link to='/about'>Rólam</Link>
-                    <Link to='/gallery'>Galéria</Link>
-                    <Link to='/courses'>Tanfolyamok</Link>
-                    <Link to='/shop'>Áruház</Link>
-                    <Link to='/blog'>Blog</Link>
-                    <Link to='/contact'>Kapcsolat</Link>
-                </header>
+                <Header />
                 <Route path='/about' component={About} />
                 <Route path='/gallery' component={Gallery} />
                 <Route path='/courses' component={CourseList} />
