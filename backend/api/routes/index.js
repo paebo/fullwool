@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../../model/queries");
 const cors = require("cors");
+const service = require("../../services/service");
 
 const corsOptions = {
   origin: "http://localhost:3000",
@@ -10,7 +11,7 @@ const corsOptions = {
 
 router.get("/", (req, res) => {});
 
-router.get("/about", cors(corsOptions), db.getAbout);
+router.get("/about", cors(corsOptions), service.getAboutPageData);
 
 router.get("/gallery", cors(corsOptions), db.getAllGalleryItems);
 
