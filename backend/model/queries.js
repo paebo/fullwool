@@ -65,9 +65,9 @@ const getBlogPosts = async () => {
   }
 }
 
-const getActiveCourses = () => {
+const getActiveCourses = async () => {
   try {
-    activeCourses = pool.query(
+    activeCourses = await pool.query(
       format("SELECT * FROM courses WHERE is_active = TRUE LIMIT 30")
     );
     return { activeCourses };

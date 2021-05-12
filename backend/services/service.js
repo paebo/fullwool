@@ -38,9 +38,19 @@ const getBlogPosts = async (req, resp) => {
     }
 }
 
+const getActiveCourses = async (req, resp) => {
+    try {
+        activeCourses = await db.getActiveCourses();
+        resp.send({ activeCourses });
+    } catch (error) {
+        return { error };
+    }
+}
+
 module.exports = {
     getAboutPageData,
     getGalleryData,
     getContactData,
     getBlogPosts,
+    getActiveCourses,
 }

@@ -19,7 +19,7 @@ router.get("/contact", cors(corsOptions), service.getContactData);
 
 router.get("/blog", cors(corsOptions), service.getBlogPosts);
 
-router.get("/courses", cors(corsOptions), db.getActiveCourses);
+router.get("/courses", cors(corsOptions), service.getActiveCourses);
 
 router.get("/shop", cors(corsOptions), db.getShopItems);
 /*router.put("/about", (req, resp) => {
