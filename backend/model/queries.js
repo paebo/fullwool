@@ -68,7 +68,7 @@ const getBlogPosts = async () => {
 const getActiveCourses = async () => {
   try {
     activeCourses = await pool.query(
-      format("SELECT * FROM courses WHERE is_active = TRUE LIMIT 30")
+      format("SELECT * FROM course")
     );
     return { activeCourses };
   } catch (error) {
@@ -76,10 +76,10 @@ const getActiveCourses = async () => {
   }
 }
 
-const getShopItems = () => {
+const getShopItems = async () => {
   try {
     // TODO: discuss if quantity column should be necessary for the shop table(still up to debate)
-    shopItems = pool.query(
+    shopItems = await pool.query(
       format("SELECT * FROM shop")
     );
     return { shopItems };

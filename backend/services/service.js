@@ -32,16 +32,25 @@ const getContactData = async (req, resp) => {
 const getBlogPosts = async (req, resp) => {
     try {
         posts = await db.getBlogPosts();
-        resp.send({ posts })
+        resp.send({ posts });
     } catch (error) {
         return { error };
     }
 }
 
-const getActiveCourses = async (req, resp) => {
+const getCourses = async (req, resp) => {
     try {
-        activeCourses = await db.getActiveCourses();
-        resp.send({ activeCourses });
+        courses = await db.getActiveCourses();
+        resp.send({ courses });
+    } catch (error) {
+        return { error };
+    }
+}
+
+const getShopItems = async (req, resp) => {
+    try {
+        webShopItems = await db.getShopItems();
+        resp.send({ webShopItems });
     } catch (error) {
         return { error };
     }
@@ -52,5 +61,6 @@ module.exports = {
     getGalleryData,
     getContactData,
     getBlogPosts,
-    getActiveCourses,
+    getCourses,
+    getShopItems
 }
