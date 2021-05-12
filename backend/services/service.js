@@ -7,10 +7,20 @@ const getAboutPageData = async (req, resp) => {
         aboutData = await db.getAbout();
         resp.send({ aboutData });
     } catch (error) {
-        return error;
+        return { error };
+    }
+}
+
+const getGalleryData = async (req, resp) => {
+    try {
+        gallery = await db.getAllGalleryItems();
+        resp.send({ gallery });
+    } catch (error) {
+        return { error };
     }
 }
 
 module.exports = {
-    getAboutPageData
+    getAboutPageData,
+    getGalleryData,
 }

@@ -32,9 +32,9 @@ const getAbout = async () => {
   }
 };
 
-const getAllGalleryItems = (req, resp) => {
+const getAllGalleryItems = async (req, resp) => {
   try {
-    galleryItems = pool.query(
+    galleryItems = await pool.query(
       format("SELECT * FROM gallery ORDER BY id DESC")
     );
     return { galleryItems };
