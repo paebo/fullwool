@@ -2,8 +2,13 @@ const db = require("../model/queries");
 const { response } = require("express");
 
 
-const getAboutPageData = (req, resp) => {
-
+const getAboutPageData = async (req, resp) => {
+    try {
+        aboutData = await db.getAbout();
+        resp.send({ aboutData });
+    } catch (error) {
+        return error;
+    }
 }
 
 module.exports = {
