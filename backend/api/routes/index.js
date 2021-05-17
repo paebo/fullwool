@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../../model/queries");
 const cors = require("cors");
 const service = require("../../services/service");
 
@@ -13,15 +12,15 @@ router.get("/", (req, res) => {});
 
 router.get("/about", cors(corsOptions), service.getAboutPageData);
 
-router.get("/gallery", cors(corsOptions), db.getAllGalleryItems);
+router.get("/gallery", cors(corsOptions), service.getGalleryData);
 
-router.get("/contact", cors(corsOptions), db.getContactInfo);
+router.get("/contact", cors(corsOptions), service.getContactData);
 
-router.get("/blog", cors(corsOptions), db.getBlogPosts);
+router.get("/blog", cors(corsOptions), service.getBlogPosts);
 
-router.get("/courses", cors(corsOptions), db.getActiveCourses);
+router.get("/courses", cors(corsOptions), service.getCourses);
 
-router.get("/shop", cors(corsOptions), db.getShopItems);
+router.get("/shop", cors(corsOptions), service.getShopItems);
 /*router.put("/about", (req, resp) => {
   const result = db.updateAbout();
   resp.status(200).send(result);

@@ -23,18 +23,18 @@ const updateAbout = (req, resp) => {
   }
 };
 
-const getAbout = () => {
+const getAbout = async () => {
   try {
-    results = pool.query("SELECT * FROM about")
+    results = await pool.query("SELECT * FROM about WHERE id = 1");
     return { results }
   } catch (error) {
     return { error };
   }
 };
 
-const getAllGalleryItems = (req, resp) => {
+const getAllGalleryItems = async () => {
   try {
-    galleryItems = pool.query(
+    galleryItems = await pool.query(
       format("SELECT * FROM gallery ORDER BY id DESC")
     );
     return { galleryItems };
@@ -43,9 +43,9 @@ const getAllGalleryItems = (req, resp) => {
   }
 }
 
-const getContactInfo = () => {
+const getContactInfo = async () => {
     try {
-      contactInfo = pool.query(
+      contactInfo = await pool.query(
         format("SELECT * FROM contact")
       );
       return { contactInfo };
@@ -54,9 +54,9 @@ const getContactInfo = () => {
   }
 }
 
-const getBlogPosts = () => {
+const getBlogPosts = async () => {
   try {
-    blogPosts = pool.query(
+    blogPosts = await pool.query(
       format("SELECT * FROM post ORDER BY id DESC")
     );
     return { blogPosts };
@@ -65,10 +65,10 @@ const getBlogPosts = () => {
   }
 }
 
-const getActiveCourses = () => {
+const getActiveCourses = async () => {
   try {
-    activeCourses = pool.query(
-      format("SELECT * FROM courses WHERE is_active = TRUE LIMIT 30")
+    activeCourses = await pool.query(
+      format("SELECT * FROM course")
     );
     return { activeCourses };
   } catch (error) {
@@ -76,10 +76,10 @@ const getActiveCourses = () => {
   }
 }
 
-const getShopItems = () => {
+const getShopItems = async () => {
   try {
     // TODO: discuss if quantity column should be necessary for the shop table(still up to debate)
-    shopItems = pool.query(
+    shopItems = await pool.query(
       format("SELECT * FROM shop")
     );
     return { shopItems };
