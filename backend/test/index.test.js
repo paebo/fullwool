@@ -103,3 +103,23 @@ describe("GET /courses", () => {
         done();
     });    
 });
+
+
+describe("GET /shop", () => {
+    it("sends a request to endpoint", async done => {
+        const res = await request.get("/shop");
+        done();
+    });
+    
+    it("gets status code 200 from endpoint", async done => {
+        const res = await request.get("/shop");
+        expect(res.status).toBe(200);
+        done();
+    });
+    
+    it("gets json object response", async done => {
+        const res = await request.get("/shop");
+        expect(res.type).toBe("application/json");
+        done();
+    });    
+});
