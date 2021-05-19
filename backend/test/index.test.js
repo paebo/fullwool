@@ -83,3 +83,23 @@ describe("GET /blog", () => {
         done();
     });    
 });
+
+
+describe("GET /courses", () => {
+    it("sends a request to endpoint", async done => {
+        const res = await request.get("/courses");
+        done();
+    });
+    
+    it("gets status code 200 from endpoint", async done => {
+        const res = await request.get("/courses");
+        expect(res.status).toBe(200);
+        done();
+    });
+    
+    it("gets json object response", async done => {
+        const res = await request.get("/courses");
+        expect(res.type).toBe("application/json");
+        done();
+    });    
+});
