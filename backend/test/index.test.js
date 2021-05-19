@@ -42,7 +42,7 @@ describe("GET /gallery", () => {
         expect(res.type).toBe("application/json");
         done();
     });    
-})
+});
 
 
 describe("GET /contact", () => {
@@ -62,4 +62,24 @@ describe("GET /contact", () => {
         expect(res.type).toBe("application/json");
         done();
     });    
-})
+});
+
+
+describe("GET /blog", () => {
+    it("sends a request to endpoint", async done => {
+        const res = await request.get("/blog");
+        done();
+    });
+    
+    it("gets status code 200 from endpoint", async done => {
+        const res = await request.get("/blog");
+        expect(res.status).toBe(200);
+        done();
+    });
+    
+    it("gets json object response", async done => {
+        const res = await request.get("/blog");
+        expect(res.type).toBe("application/json");
+        done();
+    });    
+});
