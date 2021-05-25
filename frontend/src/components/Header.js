@@ -4,9 +4,10 @@ import styled from "styled-components";
 
 const Navbar = styled.nav`
     color: black;
-    text-decoration: none;
+    font-family: "Courier New", Courier, monospace;
     padding: 2%;
     background: papayawhip;
+    text-decoration: none;
 `;
 
 const NavLink = styled(Link)`
