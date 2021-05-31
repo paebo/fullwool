@@ -12,3 +12,11 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.aboutCard {
+  flex-wrap: wrap;
+}
+
+.aboutHeader {
+  flex-direction: row;
+}
