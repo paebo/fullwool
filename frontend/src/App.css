@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  align-items: center;
 }
 
 .App-header {
@@ -13,10 +14,33 @@
   color: white;
 }
 
-.aboutCard {
-  flex-wrap: wrap;
+.aboutCardContainer {
+  display: inline-block;
+  height: auto;
+  position: relative;
 }
 
-.aboutHeader {
-  flex-direction: row;
+.aboutCard {
+  text-align: center;
+  background-color: palegreen;
+  border-radius: 25px;
+  box-shadow: 0 4px 16px 0 rgba(28, 53, 197, 0.5);
+  transition: 0.3s;
+  height: 600px;
+  width: 600px;
+}
+
+.aboutCard:hover {
+  box-shadow: 0 8px 24px 0 rgba(28, 53, 197, 0.7);
+}
+
+.contactBtn {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
