@@ -14,7 +14,7 @@ const getAboutPageData = async (req, resp) => {
 const getGalleryData = async (req, resp) => {
     try {
         gallery = await db.getAllGalleryItems();
-        resp.send({ gallery });
+        resp.send(gallery.galleryItems.rows);
     } catch (error) {
         return { error };
     }
