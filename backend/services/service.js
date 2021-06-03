@@ -5,7 +5,7 @@ const { response } = require("express");
 const getAboutPageData = async (req, resp) => {
     try {
         aboutData = await db.getAbout();
-        resp.send({ aboutData });
+        resp.send(aboutData.results.rows);
     } catch (error) {
         return { error };
     }
@@ -23,7 +23,7 @@ const getGalleryData = async (req, resp) => {
 const getContactData = async (req, resp) => {
     try {
         contactInformation = await db.getContactInfo();
-        resp.send({ contactInformation });
+        resp.send(contactInformation.contactInfo.rows);
     } catch (error) {
         return { error };
     }
@@ -32,7 +32,7 @@ const getContactData = async (req, resp) => {
 const getBlogPosts = async (req, resp) => {
     try {
         posts = await db.getBlogPosts();
-        resp.send({ posts });
+        resp.send(posts.blogPosts.rows);
     } catch (error) {
         return { error };
     }
@@ -41,7 +41,7 @@ const getBlogPosts = async (req, resp) => {
 const getCourses = async (req, resp) => {
     try {
         courses = await db.getActiveCourses();
-        resp.send({ courses });
+        resp.send(courses.activeCourses.rows);
     } catch (error) {
         return { error };
     }
@@ -50,7 +50,7 @@ const getCourses = async (req, resp) => {
 const getShopItems = async (req, resp) => {
     try {
         webShopItems = await db.getShopItems();
-        resp.send({ webShopItems });
+        resp.send(webShopItems.shopItems.rows);
     } catch (error) {
         return { error };
     }
