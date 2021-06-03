@@ -11,6 +11,15 @@ const getAboutPageData = async (req, resp) => {
     }
 }
 
+const getGalleryCategories = async (req, resp) => {
+    try {
+        categories = await db.getAllGalleryCategories();
+        resp.send(categories.items.rows);
+    } catch (error) {
+        return { error };
+    }
+}
+
 const getGalleryData = async (req, resp) => {
     try {
         gallery = await db.getAllGalleryItems();
@@ -59,6 +68,7 @@ const getShopItems = async (req, resp) => {
 module.exports = {
     getAboutPageData,
     getGalleryData,
+    getGalleryCategories,
     getContactData,
     getBlogPosts,
     getCourses,

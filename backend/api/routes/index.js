@@ -12,7 +12,7 @@ router.get("/", (req, res) => {});
 
 router.get("/about", cors(corsOptions), service.getAboutPageData);
 
-router.get("/gallery", cors(corsOptions), service.getGalleryData);
+router.get("/gallery", cors(corsOptions), service.getGalleryCategories);
 
 router.get("/contact", cors(corsOptions), service.getContactData);
 

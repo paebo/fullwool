@@ -43,6 +43,18 @@ const getAllGalleryItems = async () => {
   }
 }
 
+const getAllGalleryCategories = async () => {
+  try{
+    items = await pool.query(
+      format("SELECT DISTINCT category FROM gallery")
+    );
+    return { items };
+  }catch (error) {
+    return { error };
+  }
+}
+
+
 const getContactInfo = async () => {
     try {
       contactInfo = await pool.query(
@@ -92,6 +104,7 @@ module.exports = {
   updateAbout,
   getAbout,
   getAllGalleryItems,
+  getAllGalleryCategories,
   getContactInfo,
   getBlogPosts,
   getActiveCourses,
