@@ -21,7 +21,7 @@ function About() {
     }
 
     return (
-        <div class="aboutCardContainer">
+        <div class="cardContainer">
             <h1>Rólam</h1>
             <div className="aboutCard">
                 <div className="container">

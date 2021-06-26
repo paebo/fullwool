@@ -21,9 +21,9 @@ export default function Contact() {
     }
 
     return (
-        <div className="aboutCardContainer">
+        <div className="cardContainer">
             <h1>Kapcsolat</h1>
-            <div className="aboutCard">
+            <div className="contactCard">
                 <div className="container">
                     <Contacts contacts={contact} />
                 </div>
