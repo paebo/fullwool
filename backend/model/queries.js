@@ -25,7 +25,7 @@ const updateAbout = (req, resp) => {
 
 const getAbout = async () => {
   try {
-    results = await pool.query("SELECT * FROM about WHERE id = 1");
+    results = await pool.query("SELECT * FROM about");
     return { results }
   } catch (error) {
     return { error };

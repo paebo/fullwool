@@ -1,7 +1,5 @@
 import "./App.css";
-import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import axios from "axios";
 import About from "./pages/About";
 import Gallery from "./pages/Gallery";
 import CourseList from "./pages/CourseList";
@@ -12,20 +10,6 @@ import Home from "./pages/Home";
 import Header from "./components/Header";
 
 function App() {
-    const [items, setItems] = useState([]);
-
-    const fetchItems = async () => {
-        const response = await axios.get("http://localhost:8081/about");
-        setItems(response);
-    };
-
-    useEffect(() => {
-        fetchItems();
-        return () => {};
-    }, []);
-
-    console.log(items);
-
     return (
         <Router>
             <div className='App'>

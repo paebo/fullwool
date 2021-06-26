@@ -1,22 +1,16 @@
-import React from "react";
+import profilePic from "../static/d2hgn8z-a19806b0-019c-46ef-8285-c375e945c07b.jpg"
 
-function Bio() {
+function Bio({ about }) {
     return (
         <div>
-            <p>
-                Bors Franciska vagyok, 10 éve foglalkozom nemeztárgyak
-                készítésével. Rajztanárként végeztem – néhány évig tanítottam,
-                közben a tűzzománcban találtam meg az alkotás örömét. A
-                gyerekeim születése után új technika, a nemezelés vonzott egyre
-                nagyobb erővel, ma ez a mesterség tölti be napjaimat. A
-                természeti formák inspirálnak. A fák ágbogai, a levelek erezete
-                a sálaim mintáinak forrása. A zuzmók, fatörzsek textúrái a
-                gyűrűk, nyakbavalók hullámoztatott selyem betéteiben köszönnek
-                vissza. A vízparton gyűjtött kavicsokat gyapjúba foglalom –
-                kavicsbölcsők a kitűzők, kavics szeme van a táskáimnak és persze
-                a gyűrűim is kavicskövesek. Gyapjúból, selyemből kézzel készült
-                egyedi darabok.
-            </p>
+
+            <img src={ profilePic } 
+                id="profilePic" 
+                height="200px" 
+                width="150px" 
+                alt="website owner">
+            </img>
+            <h4>{about.bio}</h4>
         </div>
     );
 }
