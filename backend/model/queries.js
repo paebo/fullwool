@@ -80,7 +80,7 @@ const getBlogPosts = async () => {
 const getActiveCourses = async () => {
   try {
     activeCourses = await pool.query(
-      format("SELECT * FROM course")
+      format("SELECT * FROM course ORDER BY course_date DESC")
     );
     return { activeCourses };
   } catch (error) {
