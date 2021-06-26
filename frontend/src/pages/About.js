@@ -24,7 +24,6 @@ function About() {
         <div class="aboutCardContainer">
             <h1>Rólam</h1>
             <div className="aboutCard">
-                
                 <div className="container">
                     <Bio about={about} />
                     <Link class="contactBtn" to="/contact">Kapcsolat</Link>
