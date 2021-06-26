@@ -25,6 +25,11 @@
   color: white;
 }
 
+.logo {
+  height: 4vmin;
+  width: 4vmin;
+}
+
 .cardContainer {
   display: inline-block;
   height: auto;
@@ -33,6 +38,7 @@
 
 .contactCard {
   text-align: center;
+  font-family: "Courier New", Courier, monospace;
   background-color: paleturquoise;
   border-radius: 25px;
   padding: 20px;
@@ -42,6 +48,7 @@
 
 .aboutCard {
   text-align: center;
+  font-family: "Courier New", Courier, monospace;
   background-color: palegreen;
   border-radius: 25px;
   box-shadow: 0 4px 16px 0 rgba(28, 53, 197, 0.5);
