@@ -1,4 +1,4 @@
-import profilePic from "../static/d2hgn8z-a19806b0-019c-46ef-8285-c375e945c07b.jpg"
+import profilePic from "../static/placeholder.jpg"
 
 function Bio({ about }) {
     return (
