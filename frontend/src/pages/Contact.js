@@ -22,7 +22,7 @@ export default function Contact() {
     return (
         <div className="cardContainer">
             <h1>Kapcsolat</h1>
-            <div className="contactCard">
+            <div className="contactCard cardHover">
                 <div className="container">
                     <Contacts contacts={contact} />
                 </div>

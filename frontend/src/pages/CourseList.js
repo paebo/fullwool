@@ -20,7 +20,7 @@ const CourseList = () => {
     }
 
     return (
-        <div>
+        <div className="cardContainer">
             <h1>Courses</h1>
             <div>
                 {courses.map((course) => (

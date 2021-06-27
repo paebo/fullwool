@@ -23,7 +23,7 @@ function About() {
     return (
         <div class="cardContainer">
             <h1>Rólam</h1>
-            <div className="aboutCard">
+            <div className="aboutCard cardHover">
                 <div className="container">
                     <Bio about={about} />
                     <Link class="contactBtn" to="/contact">Kapcsolat</Link>
