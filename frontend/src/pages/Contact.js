@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import Contacts from "../components/Contacts"
 
-export default function Contact() {
+const Contact = () => {
     const [contact, setContact] = useState({})
 
     useEffect(() => {
@@ -30,3 +30,5 @@ export default function Contact() {
         </div>
     );
 }
+
+export default Contact

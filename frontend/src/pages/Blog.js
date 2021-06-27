@@ -1,6 +1,4 @@
-import React from "react";
-
-export default function Blog() {
+const Blog = () => {
     return (
         <div>
             <h1>Blog</h1>
@@ -8,3 +6,5 @@ export default function Blog() {
         </div>
     );
 }
+
+export default Blog

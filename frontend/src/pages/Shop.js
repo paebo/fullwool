@@ -1,6 +1,4 @@
-import React from "react";
-
-export default function Shop() {
+const Shop = () => {
     return (
         <div>
             <h1>Shop</h1>
@@ -8,3 +6,5 @@ export default function Shop() {
         </div>
     );
 }
+
+export default Shop

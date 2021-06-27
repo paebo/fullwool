@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -18,7 +17,7 @@ const NavLink = styled(Link)`
 `;
 
 // TODO: fing a more elegant way for the /home endpoint
-function Header() {
+const Header = () => {
     return (
         <Navbar>
             <Link to="/" ><img className="logo" src={logo} alt=""/></Link>
@@ -32,4 +31,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default Header

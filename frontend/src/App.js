@@ -11,7 +11,7 @@ import Home from "./pages/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-function App() {
+const App = () => {
     return (
         <Router>
             <div className='App'>

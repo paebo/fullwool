@@ -1,6 +1,6 @@
 import profilePic from "../static/placeholder.jpg"
 
-function Bio({ about }) {
+const Bio = ({ about }) => {
     return (
         <div>
             <img src={ profilePic } 

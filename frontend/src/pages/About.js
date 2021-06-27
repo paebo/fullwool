@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 import Bio from "../components/Bio"
 
-function About() {
+const About = () => {
     const [about, setAbout] = useState({})
 
     useEffect(() => {
