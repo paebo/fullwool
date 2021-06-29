@@ -46,8 +46,31 @@
   cursor: pointer;
 }
 
+.blogCard {
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 3vmin;
+  cursor: pointer;
+  box-shadow: 0 4px 16px 0 rgba(28, 53, 197, 0.5);
+  width: 800px;
+  background-color: paleturquoise;
+}
+
+.blogDropdown {
+  width: inherit;
+  font-family: inherit;
+  align-items: center;
+  position: inherit;
+  top: 100%;
+  left: 0;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  background-color: rgb(124, 224, 224);
+  padding: 15px 0 15px 0;
+}
+
 .dropDown {
-  color: white;
   align-items: center;
   position: inherit;
   top: 100%;
@@ -82,9 +105,9 @@
 }
 
 .contactBtn {
-  background-color: #008b8b;
+  background-color: rgb(124, 224, 224);
   border: none;
-  color: white;
+  color: black;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -92,6 +115,11 @@
   font-size: 16px;
   border-radius: 10px;
   margin-bottom: 15px;
+}
+
+.contactBtn:hover {
+  box-shadow: 0 4px 8px 0 rgba(28, 53, 197, 0.7);
+  transition: 0.3s;
 }
 
 .App-link {

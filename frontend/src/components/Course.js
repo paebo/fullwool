@@ -17,7 +17,7 @@ const Course = ({ course }) => {
     }
 
     return (
-        <CourseDiv className="courseCard" onClick={openCloseDropdown}>
+        <CourseDiv className="courseCard cardHover" onClick={openCloseDropdown}>
                 <div>
                     {course.title}
                 </div>
