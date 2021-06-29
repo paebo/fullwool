@@ -21,7 +21,7 @@ const CourseList = () => {
 
     return (
         <div className="cardContainer">
-            <h1>Courses</h1>
+            <h1>Tanfolyamok</h1>
             <div>
                 {courses.map((course) => (
                 <Course key={course.id} course={course}

@@ -1,7 +1,8 @@
 const Gallery = () => {
     return (
         <div>
-            <h1>Gallery</h1>
+            <h1>Galéria</h1>
+            <h1>Fejlesztés Alatt</h1>
         </div>
     );
 }

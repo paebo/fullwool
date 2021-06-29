@@ -2,7 +2,7 @@ const Blog = () => {
     return (
         <div>
             <h1>Blog</h1>
-            <h2>Under Development</h2>
+            <h1>Fejlesztés Alatt</h1>
         </div>
     );
 }

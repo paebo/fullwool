@@ -5,11 +5,11 @@ const Course = ({ course }) => {
     const [isOpen, setIsOpen] = useState(false)
 
     const CourseDiv = styled.div`
-        background-color: ${course.is_active ? "#76FF03" : "#FF3D00"};
+        background-color: ${course.is_active ? "#CCFFE5" : "#FFCCCC"};
     `;
 
     const DropDownDiv = styled.div`
-        background-color: ${course.is_active ? "#228b22" : "#8B0000"};
+        background-color: ${course.is_active ? "#66FFB2" : "#FF9999"};
     `;
 
     const openCloseDropdown = () => {

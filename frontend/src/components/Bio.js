@@ -1,12 +1,12 @@
-import profilePic from "../static/placeholder.jpg"
+import placeHolder from "../static/placeholder.jpg"
 
 const Bio = ({ about }) => {
     return (
         <div>
-            <img src={ profilePic } 
+            <img src={ placeHolder } 
                 id="profilePic" 
                 height="200px" 
-                width="150px" 
+                width="250px" 
                 alt="website owner">
             </img>
             <h4>{about.bio}</h4>

@@ -1,8 +1,8 @@
 const Shop = () => {
     return (
         <div>
-            <h1>Shop</h1>
-            <h1>Under Development</h1>
+            <h1>Webáruház</h1>
+            <h1>Fejlesztés Alatt</h1>
         </div>
     );
 }
